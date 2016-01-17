@@ -1,0 +1,35 @@
+<template>
+  <section class="au-animate">
+
+    <div class="row">
+
+      <div class="col-md-12">
+        <div class="jumbotron top-buffer">
+          <h1>${heading}</h1>
+
+          <p>
+            The official leaderboard and data analysis charts for the 2016 BikeArlington Freezing Saddles competition.
+          </p>
+
+          <div class="pull-right">
+            <a class="btn btn-primary" href="/leaderboard/team_text">Team Leaderboard (Text)</a>
+            <a class="btn btn-primary" href="/leaderboard/team">Team Leaderboard (Charts)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <h1><span class="label label-default">{{team_count}} teams.  {{contestant_count}} contestants.</span></h1>
+
+      <h1><span class="label label-default">{{total_rides|groupnum}} rides.  {{total_hours|groupnum}} hours.  {{total_miles|groupnum}} miles ridden.</span>
+    </h1>
+
+      <h2><span class="label label-primary">{{sub_freezing_hours|groupnum}} hours below freezing.</span>
+        <span class="label label-success">{{rain_hours|groupnum}} hours in the rain.</span>
+        <span class="label label-info">{{snow_hours|groupnum}} hours in the snow.</span></h2>
+    </div>
+
+  </section>
+</template>
