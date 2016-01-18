@@ -1,0 +1,20 @@
+<template>
+  <require from="blur-image"></require>
+
+  <section class="au-animate">
+
+    <div class="row">
+
+      <div class="col-lg-12">
+        <h1 class="page-header">Thumbnail Gallery</h1>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-xs-6 thumb" repeat.for="photo of photos">
+        <a class="thumbnail" href="#">
+          <img class="img-responsive" src.bind="photo.thumb_url" alt="${photo.caption}" />
+        </a>
+      </div>
+    </div>
+
+  </section>
+</template>

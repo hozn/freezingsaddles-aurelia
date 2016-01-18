@@ -5,15 +5,23 @@ import {HttpClient} from 'aurelia-fetch-client';
 export class Welcome {
   heading = 'Freezing Saddles Competition';
 
-  firstName = 'John';
-  lastName = 'Doe';
-  previousValue = this.fullName;
+  teamCount = null;
+  contestantCount = null;
+  totalRides = null;
+
+  rainHours = null;
+  snowHours = null;
+  subFreezingHours = null;
+
+  totalHours = null;
+  totalMiles = null;
+  totalRides = null;
 
   constructor(http) {
     http.configure(config => {
       config
         .useStandardConfiguration()
-        .withBaseUrl('https://api.github.com/');
+        .withBaseUrl('http://127.0.0.1:5000/');
     });
 
     this.http = http;
@@ -34,15 +42,29 @@ export class Welcome {
   }
 
   canDeactivate() {
-    if (this.fullName !== this.previousValue) {
-      return confirm('Are you sure you want to leave?');
-    }
+    // if (this.fullName !== this.previousValue) {
+    //   return confirm('Are you sure you want to leave?');
+    // }
+    return true;
+  }
+  activate() {
+    return this.loadStats();
   }
 
-  activate() {
-    return this.http.fetch('users')
+  loadStats() {
+    return this.http.fetch('stats/general')
       .then(response => response.json())
-      .then(users => this.users = users);
+      .then(stats => {
+        console.log("Received server stats", stats);
+        this.teamCount = stats.team_count;
+        this.contestantCount = stats.contestant_count;
+        this.totalRides = stats.total_rides;
+        this.totalHours = stats.total_hours;
+        this.totalMiles = stats.total_miles;
+        this.subFreezingHours = stats.sub_freezing_hours;
+        this.rainHours = stats.rain_hours;
+        this.snowHours = stats.snow_hours;
+      });
   }
 }
 

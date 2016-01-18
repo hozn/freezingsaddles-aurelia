@@ -1,4 +1,5 @@
 <template>
+  <require from="./utils/big-number"></require>
   <section class="au-animate">
 
     <div class="row">
@@ -21,14 +22,14 @@
 
 
     <div class="row">
-      <h1><span class="label label-default">{{team_count}} teams.  {{contestant_count}} contestants.</span></h1>
+      <h1><span class="label label-default">${teamCount} teams.  ${contestantCount} contestants.</span></h1>
 
-      <h1><span class="label label-default">{{total_rides|groupnum}} rides.  {{total_hours|groupnum}} hours.  {{total_miles|groupnum}} miles ridden.</span>
+      <h1><span class="label label-default">${totalRides | bigNumber } rides.  ${total_hours | bigNumber } hours.  ${ total_miles | bigNumber } miles ridden.</span>
     </h1>
 
-      <h2><span class="label label-primary">{{sub_freezing_hours|groupnum}} hours below freezing.</span>
-        <span class="label label-success">{{rain_hours|groupnum}} hours in the rain.</span>
-        <span class="label label-info">{{snow_hours|groupnum}} hours in the snow.</span></h2>
+      <h2><span class="label label-primary">${sub_freezing_hours | bigNumber } hours below freezing.</span>
+        <span class="label label-success">${rain_hours | bigNumber } hours in the rain.</span>
+        <span class="label label-info">${snow_hours | bigNumber } hours in the snow.</span></h2>
     </div>
 
   </section>

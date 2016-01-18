@@ -3,7 +3,7 @@ export class App {
     config.title = 'Freezing Saddles';
     config.map([
       { route: ['', 'welcome'], name: 'welcome',      moduleId: 'welcome',      nav: true, title: 'Welcome' },
-      { route: 'users',         name: 'users',        moduleId: 'users',        nav: true, title: 'Github Users' },
+      { route: 'photos',        name: 'photos',       moduleId: 'photos',       nav: true, title: 'Competition Photos' },
       { route: 'child-router',  name: 'child-router', moduleId: 'child-router', nav: true, title: 'Child Router' }
     ]);
 
