@@ -4,7 +4,8 @@ export class App {
     config.map([
       { route: ['', 'welcome'], name: 'welcome',      moduleId: 'welcome',      nav: true, title: 'Welcome' },
       { route: 'photos',        name: 'photos',       moduleId: 'photos',       nav: true, title: 'Competition Photos' },
-      { route: 'child-router',  name: 'child-router', moduleId: 'child-router', nav: true, title: 'Child Router' }
+      { route: 'leaderboard',   name: 'leaderboard',  moduleId: 'leaderboard',  nav: true, title: 'Leaderboard' },
+      { route: 'data-explore',  name: 'data-explore', moduleId: 'data-explore', nav: true, title: 'Data Exploration' }
     ]);
 
     this.router = router;

@@ -22,6 +22,7 @@ System.config({
     "aurelia-loader-default": "npm:aurelia-loader-default@1.0.0-beta.1.0.2",
     "aurelia-logging-console": "npm:aurelia-logging-console@1.0.0-beta.1",
     "aurelia-router": "npm:aurelia-router@1.0.0-beta.1.0.1",
+    "aurelia-task-queue": "npm:aurelia-task-queue@1.0.0-beta.1.0.1",
     "aurelia-templating-binding": "npm:aurelia-templating-binding@1.0.0-beta.1.0.2",
     "aurelia-templating-resources": "npm:aurelia-templating-resources@1.0.0-beta.1.0.4",
     "aurelia-templating-router": "npm:aurelia-templating-router@1.0.0-beta.1.0.5",
@@ -29,8 +30,10 @@ System.config({
     "babel-runtime": "npm:babel-runtime@5.8.34",
     "bootstrap": "github:twbs/bootstrap@3.3.6",
     "core-js": "npm:core-js@1.2.6",
+    "css": "github:systemjs/plugin-css@0.1.20",
     "fetch": "github:github/fetch@0.10.1",
     "font-awesome": "npm:font-awesome@4.5.0",
+    "highcharts": "npm:highcharts-release@4.2.1",
     "moment": "npm:moment@2.11.1",
     "numeral": "npm:numeral@1.5.3",
     "text": "github:systemjs/plugin-text@0.0.3",
@@ -192,6 +195,9 @@ System.config({
     },
     "npm:font-awesome@4.5.0": {
       "css": "github:systemjs/plugin-css@0.1.20"
+    },
+    "npm:highcharts-release@4.2.1": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:inherits@2.0.1": {
       "util": "github:jspm/nodelibs-util@0.1.0"

@@ -18,12 +18,11 @@ export class Welcome {
   totalRides = null;
 
   constructor(http) {
-    http.configure(config => {
-      config
-        .useStandardConfiguration()
-        .withBaseUrl('http://127.0.0.1:5000/');
-    });
-
+    // http.configure(config => {
+    //   config
+    //     .useStandardConfiguration()
+    //     .withBaseUrl('http://127.0.0.1:5000/');
+    // });
     this.http = http;
   }
 

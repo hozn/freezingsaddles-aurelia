@@ -9,10 +9,17 @@
         <h1 class="page-header">Thumbnail Gallery</h1>
       </div>
 
-      <div class="col-lg-3 col-md-4 col-xs-6 thumb" repeat.for="photo of photos">
-        <a class="thumbnail" href="#">
+      <div class="col-md-3 col-sm-6" repeat.for="photo of photos">
+        <a href.bind="photo.ref" class="thumbnail" target="_blank">
           <img class="img-responsive" src.bind="photo.thumb_url" alt="${photo.caption}" />
-        </a>
+          <!--
+          <div class="caption">
+            ${photo.caption}
+          </div>
+
+          <a href.bind"photo.ref" target="_blank">&gt;&gt;</a>
+        -->
+      </a>
       </div>
     </div>
 

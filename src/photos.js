@@ -1,6 +1,5 @@
 import {inject} from 'aurelia-framework';
 import {HttpClient} from 'aurelia-fetch-client';
-import 'fetch';
 
 @inject(HttpClient)
 export class Photos {
@@ -8,12 +7,6 @@ export class Photos {
   photos = [];
 
   constructor(http) {
-    http.configure(config => {
-      config
-        .useStandardConfiguration()
-        .withBaseUrl('http://127.0.0.1:5000/');
-    });
-
     this.http = http;
   }
 
