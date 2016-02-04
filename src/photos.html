@@ -10,13 +10,15 @@
       </div>
 
       <div class="col-md-3 col-sm-6" repeat.for="photo of photos">
+        
         <a href.bind="photo.ref" class="thumbnail" target="_blank">
-          <img class="img-responsive" src.bind="photo.thumb_url" alt="${photo.caption}" />
-          <!--
+          ${photo.ref}
+          <img class="img-responsive" src.bind="photo.img_l" alt="${photo.caption}" />
+
           <div class="caption">
             ${photo.caption}
           </div>
-
+          <!--
           <a href.bind"photo.ref" target="_blank">&gt;&gt;</a>
         -->
       </a>

@@ -76,6 +76,7 @@
       "highcharts": "npm:highcharts-release@^4.2.1",
       "moment": "npm:moment@^2.11.1",
       "numeral": "npm:numeral@^1.5.3",
+      "photoswipe": "npm:photoswipe@^4.1.1",
       "text": "github:systemjs/plugin-text@^0.0.3"
     },
     "devDependencies": {
@@ -86,6 +87,10 @@
     "overrides": {
       "npm:core-js@1.2.6": {
         "main": "client/shim.min"
+      },
+      "npm:photoswipe@4.1.1": {
+        "lib": "dist",
+        "main": "photoswipe"
       }
     }
   }

@@ -10,7 +10,8 @@ System.config({
   paths: {
     "*": "dist/*",
     "github:*": "jspm_packages/github/*",
-    "npm:*": "jspm_packages/npm/*"
+    "npm:*": "jspm_packages/npm/*",
+    "bower:*": "jspm_packages/bower/*"
   },
 
   map: {
@@ -36,6 +37,7 @@ System.config({
     "highcharts": "npm:highcharts-release@4.2.1",
     "moment": "npm:moment@2.11.1",
     "numeral": "npm:numeral@1.5.3",
+    "photoswipe": "npm:photoswipe@4.1.1",
     "text": "github:systemjs/plugin-text@0.0.3",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"

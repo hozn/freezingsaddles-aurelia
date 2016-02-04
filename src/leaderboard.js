@@ -76,39 +76,35 @@ export class Leaderboard {
       }).then(leaderboard => {
 
 
-				let team_names = [];
-				let team_points = [];
-				let team_distance = [];
-
+				let teamNames = [];
+				let teamPoints = [];
+				let teamDistance = [];
 
 				for (let t of leaderboard) {
-						team_names.push(t.team_name);
-						team_points.push(Math.trunc(t.total_score));
-						team_distance.push(Math.trunc(t.total_distance));
+						teamNames.push(t.team_name);
+						teamPoints.push(Math.trunc(t.total_score));teamPoints
+						teamDistance.push(Math.trunc(t.total_distance));
 				}
 
-				let athletePoints = [];
-
-				// Create a 0-filled array that we'll use as a template.
-				let pointsTpl = Array.apply(null, Array(leaderboard.length)).map(Number.prototype.valueOf, 0);
-
-				for (let i=0; i < leaderboard.length; i++) {
-					let t = leaderboard[i];
-					for (let a of t.team_members) {
-						let pointsByTeam = pointsTpl.slice(0);
-						pointsByTeam[i] = Math.trunc(a.total_score);
-						athletePoints.push({'name': a.athlete_name, 'data': pointsByTeam});
-					}
-				}
-
-				console.log(athletePoints);
+				// let athletePoints = [];
+				//
+				// // Create a 0-filled array that we'll use as a template.
+				// let pointsTpl = Array.apply(null, Array(leaderboard.length)).map(Number.prototype.valueOf, 0);
+				//
+				// for (let i=0; i < leaderboard.length; i++) {
+				// 	let t = leaderboard[i];
+				// 	for (let a of t.team_members) {
+				// 		let pointsByTeam = pointsTpl.slice(0);
+				// 		pointsByTeam[i] = Math.trunc(a.total_score);
+				// 		athletePoints.push({'name': a.athlete_name, 'data': pointsByTeam});
+				// 	}
+				// }
 
 				this.chartData = {
 		        chart: {
 		            type: 'bar',
 								height: 600
 		        },
-
 		        title: {
 		            text: 'Team Leaderboard'
 		        },
@@ -116,7 +112,7 @@ export class Leaderboard {
 		            text: 'Points'
 		        },
 		        xAxis: {
-		            categories: team_names,
+		            categories: teamNames,
 		            title: {
 		                text: null
 		            }
@@ -133,30 +129,20 @@ export class Leaderboard {
 		        },
 		        tooltip: {
 					      formatter: function() {
-									return '<b>' + this.series.name + '</b> ' + this.y + ' points';
-										// if (this.series.name == 'Distance') {
-										// 	return this.y + ' miles';
-										// } else{
-										// 	return this.y + ' points';
-										// }
+										if (this.series.name == 'Distance') {
+											return this.y + ' miles';
+										} else{
+											return this.y + ' points';
+										}
 					      }
-								//pointFormat: "Value: {point.y:.0f}"
 		        },
 		        plotOptions: {
-								series: {
-                		stacking: 'normal'
-            		}
-								/*,
 		            bar: {
 		                dataLabels: {
 		                    enabled: true
 		                }
-		            }*/
+								}
 		        },
-						legend: {
-							enabled: false
-						},
-						/*
 		        legend: {
 		            layout: 'vertical',
 		            align: 'right',
@@ -168,23 +154,21 @@ export class Leaderboard {
 		            backgroundColor: '#FFFFFF',
 		            shadow: true
 		        },
-						*/
+
 		        credits: {
 		            enabled: false
 		        },
-						series: athletePoints
-		        // series: [{
-		        //     name: 'Points',
-		        //     data: team_points
-		        // }, {
-		        //     name: 'Distance',
-		        //     data: team_distance
-		        // }/*, {
-		        //     name: 'Year 2012',
-		        //     data: [1052, 954, 4250, 740, 38]
-		        // }*/]
+		        series: [
+							{
+			            name: 'Points',
+			            data: teamPoints
+			        },
+							{
+			            name: 'Distance',
+			            data: teamDistance
+			        }
+						]
 		    };
-
 
 				this.changeGraph(this.chartData);
 			});
