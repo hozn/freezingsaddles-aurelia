@@ -10,11 +10,13 @@ export class Photos {
     this.http = http;
   }
 
-  activate() {
+  activate(params, routeConfig) {
+    console.log(params);
+
     return this.http.fetch('photos')
       .then(response => response.json())
       .then(container => {
-        console.log("Fetched photos", container);
+        // console.log("Fetched photos", container);
         this.photos = container.result;
       });
   }
